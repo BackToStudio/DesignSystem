@@ -8,16 +8,16 @@ Le Design System de BackTo Studio va nous permettre de rationaliser tous les com
 composer require backto/design-system
 ```
 
-## Utilisation
+## Listes des composants "dumb"
 
-```php
-use BackTo\DesignSystem\Components\Button;
-```
-
-## Composants
-
-### Bouton
-
-```php
-use BackTo\DesignSystem\Components\Button;
-```
+- [ ] Bouton
+- [ ] InnerContainer
+- [ ] Colonnes
+- [ ] Colonne
+- [ ] Cover
+- [ ] Formulaire
+- [ ] Input
+- [ ] Select
+- [ ] Checkbox
+- [ ] Radio
+- [ ] Select
