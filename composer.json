@@ -1,0 +1,11 @@
+{
+    "name": "backto/design-system",
+    "description": "Le design system de BackTo Studio",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "BackTo\\DesignSystem\\": "includes/"
+        }
+    }
+}
+
