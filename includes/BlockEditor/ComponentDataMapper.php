@@ -35,10 +35,10 @@ class BlockDataMapper implements Hooks
         return new TokenComponent();
     }
 
-    public function applyData(TokenComponent $component, string $blockContent, array $block, WP_Block $instance): void {}
+    public function applyData($component, string $blockContent, array $block, WP_Block $instance): void {}
 
-    public function applyStyles(TokenComponent $component, string $blockContent, array $block, WP_Block $instance): void {}
+    public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void {}
 
-    public function applyInteractions(TokenComponent $component, string $blockContent, array $block, WP_Block $instance): void {}
+    public function applyInteractions($component, string $blockContent, array $block, WP_Block $instance): void {}
     
 }
