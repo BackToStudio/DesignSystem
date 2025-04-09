@@ -23,7 +23,7 @@ class HeadingComponent extends TokenComponent
 
     public function getTagName(): string
     {
-        return 'h' . $this->level;
+        return 'h' . $this->getLevel();
     }
 
 }
