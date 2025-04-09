@@ -7,7 +7,6 @@ use BackTo\DesignSystem\Component\TokenComponent;
 class ListComponent extends TokenComponent
 {
     private bool $ordered = false;
-	private string $type = 'disc';
 	private int $start = 1;
 	protected string $tagName = 'ul';
 
@@ -19,16 +18,6 @@ class ListComponent extends TokenComponent
 	public function isOrdered(): bool
 	{
 		return $this->ordered;
-	}
-
-	public function setType(string $type): void
-	{
-		$this->type = $type;
-	}
-
-	public function getType(): string
-	{
-		return $this->type;
 	}
 
 	public function setStart(int $start): void
@@ -43,17 +32,14 @@ class ListComponent extends TokenComponent
 
 	public function getMarkup(): string
 	{
-		$this->setTagName($this->tagName);
-
-		$type = $this->getType();
 		$start = $this->getStart();
 
 		if ($this->isOrdered()) {
 			$this->setTagName('ol');
-
-			if ($start > 1) {
-				$this->addAttribute('start', $start);
-			}
+		}
+		
+		if ($start > 1) {
+			$this->addAttribute('start', $start);
 		}
 
 		return parent::getMarkup();
