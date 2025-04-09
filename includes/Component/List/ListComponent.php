@@ -9,6 +9,7 @@ class ListComponent extends TokenComponent
     private bool $ordered = false;
 	private string $type = 'disc';
 	private int $start = 1;
+	protected string $tagName = 'ul';
 
 	public function ordered(bool $ordered = true): void
 	{
@@ -40,11 +41,11 @@ class ListComponent extends TokenComponent
 		return $this->start;
 	}
 
-    public function __construct()
-    {
-        $this->setTagName('ul');
+	public function getMarkup(): string
+	{
+		$this->setTagName($this->tagName);
 
-        $type = $this->getType();
+		$type = $this->getType();
 		$start = $this->getStart();
 
 		if ($this->isOrdered()) {
@@ -54,5 +55,7 @@ class ListComponent extends TokenComponent
 				$this->addAttribute('start', $start);
 			}
 		}
-    }
+
+		return parent::getMarkup();
+	}
 }
