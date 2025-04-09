@@ -6,6 +6,7 @@ use BackTo\DesignSystem\Component\TokenComponent;
 
 class LinkComponent extends TokenComponent
 {
+    protected string $tagName = 'a';
     protected string $href = '';
     protected string $target = '';
     protected string $rel = '';
@@ -45,8 +46,6 @@ class LinkComponent extends TokenComponent
 
     public function getMarkup(): string
     {
-        $this->setTagName('a');
-
         if (!empty($this->getHref())) {
             $this->addAttribute('href', $this->getHref());
         }
