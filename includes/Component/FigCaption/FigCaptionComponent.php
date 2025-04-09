@@ -6,11 +6,8 @@ use BackTo\DesignSystem\Component\TokenComponent;
 
 class FigCaptionComponent extends TokenComponent
 {
+    private string $tagName = 'figcaption';
     private string $children = '';
-
-    public function __construct() {
-        $this->setTagName('figcaption');
-    }
 
     public function setChildren(string $children): self
     {
@@ -25,7 +22,7 @@ class FigCaptionComponent extends TokenComponent
 
     public function getMarkup(): string
     {
-        $this->addChild($this->children);
+        $this->addChild($this->getChildren());
 
         return parent::getMarkup();
     }

@@ -46,14 +46,14 @@ class ImageComponent extends TokenComponent
     public function getMarkup(): string
     {
         if (!empty($this->getSrc())) {
-            $this->addAttribute('src', $this->src);
+            $this->addAttribute('src', $this->getSrc());
         }
 
         if (!empty($this->alt)) {
-            $this->addAttribute('alt', $this->alt);
+            $this->addAttribute('alt', $this->getAlt());
         }
         if (!empty($this->title)) {
-            $this->addAttribute('title', $this->title);
+            $this->addAttribute('title', $this->getTitle());
         }
 
         $attributes = $this->prepareAttributes();
