@@ -7,7 +7,7 @@ use BackTo\DesignSystem\Contracts\StyleDecorator;
 
 class TokenComponent implements Component
 {
-    private string $tagName = 'div';
+    protected string $tagName = 'div';
     private array $attributes = [];
     private array $children = [];
     private array $classes = [];

@@ -6,10 +6,6 @@ use BackTo\DesignSystem\Component\TokenComponent;
 
 class ParagraphComponent extends TokenComponent
 {
-
-    public function __construct()
-    {
-        $this->setTagName('p');
-    }
+    protected string $tagName = 'p';
 
 }
