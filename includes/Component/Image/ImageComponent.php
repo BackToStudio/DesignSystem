@@ -54,6 +54,7 @@ class ImageComponent extends TokenComponent
             $this->addAttribute('alt', $this->getAlt());
         }
 
+
         if (!empty($this->getTitle())) {
             $this->addAttribute('title', $this->getTitle());
         }
