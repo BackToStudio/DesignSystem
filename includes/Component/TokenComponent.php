@@ -89,6 +89,14 @@ class TokenComponent implements Component
 
         return $this;
     }
+    public function removeAttribute(string $attribute): static
+    {
+        if( $this->hasAttribute($attribute) ){
+            unset($this->attributes[$attribute]);
+        }
+
+        return $this;
+    }
 
     public function hasAttribute(string $attributeName): bool
     {
