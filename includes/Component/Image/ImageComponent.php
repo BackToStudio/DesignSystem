@@ -6,6 +6,8 @@ use BackTo\DesignSystem\Component\TokenComponent;
 
 class ImageComponent extends TokenComponent
 {
+    private string $tagName = 'img';
+
     protected string $title = '';
     protected string $alt = '';
     protected string $src = '';
@@ -49,14 +51,14 @@ class ImageComponent extends TokenComponent
             $this->addAttribute('src', $this->getSrc());
         }
 
-        if (!empty($this->alt)) {
+        if (!empty($this->getAlt())) {
             $this->addAttribute('alt', $this->getAlt());
         }
-        if (!empty($this->title)) {
+        if (!empty($this->getTitle())) {
             $this->addAttribute('title', $this->getTitle());
         }
 
         $attributes = $this->prepareAttributes();
-        return '<img ' . $attributes . '>';
+        return '<'.$this->getTagName() .' ' . $attributes . '>';
     }
 }

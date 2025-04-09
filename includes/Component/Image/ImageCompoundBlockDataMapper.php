@@ -8,13 +8,6 @@ use WP_Block;
 class ImageCompoundBlockDataMapper extends BlockDataMapper
 {
     const BLOCK_NAME = 'core/image';
-    private ImageCompoundDecorator $imageDecorator;
-
-    public function __construct(
-        ImageCompoundDecorator $imageDecorator
-    ){
-        $this->imageDecorator = $imageDecorator;
-    }
 
     public function getComponent(array $block): ImageCompoundComponent
     {
@@ -28,8 +21,6 @@ class ImageCompoundBlockDataMapper extends BlockDataMapper
     }
 
     public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void {
-        /** @var ImageCompoundComponent $component */
-        $component->addDecorator($this->imageDecorator);
     }
     
 }
