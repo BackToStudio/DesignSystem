@@ -8,6 +8,9 @@ use BackTo\DesignSystem\Foundation\Decorator\AlignDecorator;
 class ListDecorator implements StyleDecorator
 {
 
+    // TODO : add behaviour decorator
+    // TODO : add ordered decorator
+    // TODO : add override gutenberg decorator
     private AlignDecorator $alignDecorator;
  
     public function __construct(
