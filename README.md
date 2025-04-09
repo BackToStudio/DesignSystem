@@ -10,7 +10,7 @@ composer require backto/design-system
 
 ## Listes des composants "dumb"
 
-- [ ] Bouton
+- [x] Bouton
 - [ ] InnerContainer
 - [ ] Colonnes
 - [ ] Colonne
@@ -21,3 +21,6 @@ composer require backto/design-system
 - [ ] Checkbox
 - [ ] Radio
 - [ ] Select
+
+## Compound Components List
+- [x] Slider
