@@ -19,16 +19,17 @@ class SliderControls extends TokenComponent
 		$this->sliderPrev->addClass('is-style-link is-style-icon');
 		$this->sliderPrev->addClass('wp-block-slider__prev');
 		// $this->sliderPrev->addClass('!static');
-		$this->sliderPrev->addChild((new IconComponent('arrow_left'))->getMarkup());
+		$svgFactory = new SvgFactory();
+		$arrowLeftComponent = $svgFactory->getComponent('arrow_left');
+		$this->sliderPrev->addChild($arrowLeftComponent->getMarkup());
 		$this->sliderPrev->addChild('<span class="sr-only">Previous</span>');
 
 		$this->sliderNext = new ButtonComponent();
 		$this->sliderNext->addClass('is-style-link is-style-icon');
 		$this->sliderNext->addClass('wp-block-slider__next');
 		// $this->sliderNext->addClass('!static');
-		$this->sliderNext->addChild(
-			(new IconComponent('arrow_right'))->getMarkup()
-		);
+		$arrowRightComponent = $svgFactory->getComponent('arrow_right');
+		$this->sliderNext->addChild($arrowRightComponent->getMarkup());
 		$this->sliderNext->addChild('<span class="sr-only">Next</span>');
 	}
 
