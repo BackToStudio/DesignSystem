@@ -28,24 +28,16 @@ class ListBlockDataMapper extends BlockDataMapper
 
         // TODO : add content
 
-        // TODO : add has_parent_layout and parent_layout_constrained
-        // TODO : add condition to add align decorator
-        $align = $block['attrs']['align'] ?? 'default';
-
         if (isset($block['attrs']['ordered'])) {
             $component->ordered($block['attrs']['ordered']);
         }
 
-        if (isset($block['attrs']['type'])) {
-            $component->setType($block['attrs']['type']);
-        }
+        // if (isset($block['attrs']['type'])) {
+        //     $component->setType($block['attrs']['type']);
+        // }
     
         if (isset($block['attrs']['start'])) {
             $component->setStart($block['attrs']['start']);
-        }
-    
-        if (isset($block['attrs']['className'])) {
-            $component->addClass($block['attrs']['className']);
         }
 
         // TODO : add real content
@@ -55,6 +47,14 @@ class ListBlockDataMapper extends BlockDataMapper
     public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void {
         /** @var ListComponent $component */
         $component->addDecorator($this->listDecorator);
+
+        // TODO : add has_parent_layout and parent_layout_constrained
+        // TODO : add condition to add align decorator
+        // $align = $block['attrs']['align'] ?? 'default';
+
+        if (isset($block['attrs']['className'])) {
+            $component->addClass($block['attrs']['className']);
+        }
     }
     
 
