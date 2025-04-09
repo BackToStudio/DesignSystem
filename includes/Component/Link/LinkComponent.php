@@ -47,15 +47,15 @@ class LinkComponent extends TokenComponent
     {
         $this->setTagName('a');
 
-        if (!empty($this->href)) {
+        if (!empty($this->getHref())) {
             $this->addAttribute('href', $this->getHref());
         }
 
-        if (!empty($this->target)) {
+        if (!empty($this->getTarget())) {
             $this->addAttribute('target', $this->getTarget());
         }
 
-        if (!empty($this->rel)) {
+        if (!empty($this->getRel())) {
             $this->addAttribute('rel', $this->getRel());
         }
 
