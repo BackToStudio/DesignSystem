@@ -6,7 +6,7 @@ use BackTo\DesignSystem\Component\TokenComponent;
 
 class ImageComponent extends TokenComponent
 {
-    private string $tagName = 'img';
+    protected string $tagName = 'img';
     protected string $title = '';
     protected string $alt = '';
     protected string $src = '';
