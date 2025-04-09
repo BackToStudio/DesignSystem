@@ -6,8 +6,5 @@ use BackTo\DesignSystem\Component\TokenComponent;
 
 class SlideComponent extends TokenComponent
 {
-	public function __construct()
-	{
-		$this->setTagName('article');
-	}
+	protected string $tagName = 'article';
 }
