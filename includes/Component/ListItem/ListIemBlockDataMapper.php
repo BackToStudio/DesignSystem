@@ -9,13 +9,6 @@ use WP_Block;
 class ListItemBlockDataMapper extends BlockDataMapper
 {
     const BLOCK_NAME = 'core/list-item';
-    private ListItemDecorator $listItemDecorator;
-
-    public function __construct(
-        ListItemDecorator $listItemDecorator
-    ){
-        $this->listItemDecorator = $listItemDecorator;
-    }
 
     public function getComponent(array $block): TokenComponent
     {
