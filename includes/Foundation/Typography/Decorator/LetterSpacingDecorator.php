@@ -2,7 +2,7 @@
 
 namespace BackTo\DesignSystem\Foundation\Typography\Decorator;
 
-use BackTo\DesignSystem\Config\TailwindConfig;
+use BackTo\DesignSystem\Foundation\TailwindConfig;
 use BackTo\DesignSystem\Contracts\StyleDecorator;
 
 class LetterSpacingDecorator implements StyleDecorator

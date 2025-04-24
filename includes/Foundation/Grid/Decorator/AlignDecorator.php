@@ -2,7 +2,7 @@
 
 namespace BackTo\DesignSystem\Foundation\Grid\Decorator;
 
-use BackTo\DesignSystem\Config\TailwindConfig;
+use BackTo\DesignSystem\Foundation\TailwindConfig;
 use BackTo\DesignSystem\Contracts\StyleDecorator;
 
 class AlignDecorator implements StyleDecorator

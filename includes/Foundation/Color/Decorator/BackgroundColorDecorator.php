@@ -3,8 +3,6 @@
 namespace BackTo\DesignSystem\Foundation\Color\Decorator;
 
 use BackTo\DesignSystem\Contracts\StyleDecorator;
-use BackTo\DesignSystem\Config\BackgroundColorConfig;
-use BackTo\DesignSystem\Config\TailwindConfig;
 use BackTo\DesignSystem\Foundation\Color\Decorator\ColorDecorator;
 
 class BackgroundColorDecorator implements StyleDecorator
