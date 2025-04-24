@@ -1,6 +1,6 @@
 <?php
 
-namespace BackTo\DesignSystem\Foundation\Color\Decorator;
+namespace BackTo\DesignSystem\Foundation\Decorator;
 
 use BackTo\DesignSystem\Config\TailwindConfig;
 use BackTo\DesignSystem\Contracts\StyleDecorator;
