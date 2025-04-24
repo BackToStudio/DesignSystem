@@ -1,9 +1,9 @@
 <?php 
 
-namespace BackTo\DesignSystem\Decorator;
+namespace BackTo\DesignSystem\Foundation\Color\Decorator;
 
 use BackTo\DesignSystem\Contracts\StyleDecorator;
-use BackTo\DesignSystem\Foundation\Decorator\ColorDecorator;
+use BackTo\DesignSystem\Foundation\Color\Decorator\ColorDecorator;
 
 class RingColorDecorator implements StyleDecorator
 {

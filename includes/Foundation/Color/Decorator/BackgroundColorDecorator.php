@@ -1,6 +1,6 @@
 <?php 
 
-namespace BackTo\DesignSystem\Decorator;
+namespace BackTo\DesignSystem\Foundation\Color\Decorator;
 
 use BackTo\DesignSystem\Contracts\StyleDecorator;
 use BackTo\DesignSystem\Config\BackgroundColorConfig;
