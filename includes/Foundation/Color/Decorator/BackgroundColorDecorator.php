@@ -4,17 +4,19 @@ namespace BackTo\DesignSystem\Foundation\Color\Decorator;
 
 use BackTo\DesignSystem\Contracts\StyleDecorator;
 use BackTo\DesignSystem\Foundation\Color\Decorator\ColorDecorator;
+use DiplomaEducation\Foundation\Color\Configurator\BackgroundColorConfigurator;
 
 class BackgroundColorDecorator implements StyleDecorator
 {
     private ColorDecorator $colorDecorator;
 
-    public function __construct(array $backgroundColors)
+    public function __construct(BackgroundColorConfigurator $configurator)
     {
-        if( empty($backgroundColors)){
+        $colors = $configurator->configure();
+        if( empty($colors)){
             throw new \Exception('Background colors are not defined.');
         }
-        $this->colorDecorator = new ColorDecorator($backgroundColors);
+        $this->colorDecorator = new ColorDecorator($colors);
     }
 
     public function setColor(string $color)
