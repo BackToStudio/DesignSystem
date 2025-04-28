@@ -4,7 +4,7 @@ namespace BackTo\DesignSystem\Foundation\Color\Decorator;
 
 use BackTo\DesignSystem\Contracts\StyleDecorator;
 use BackTo\DesignSystem\Foundation\Color\Decorator\ColorDecorator;
-use DiplomaEducation\Foundation\Color\Configurator\BorderColorConfigurator;
+use BackTo\DesignSystem\Foundation\Color\Configurator\BorderColorConfigurator;
 
 class BorderColorDecorator implements StyleDecorator
 {

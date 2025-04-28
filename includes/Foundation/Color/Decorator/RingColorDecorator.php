@@ -4,7 +4,7 @@ namespace BackTo\DesignSystem\Foundation\Color\Decorator;
 
 use BackTo\DesignSystem\Contracts\StyleDecorator;
 use BackTo\DesignSystem\Foundation\Color\Decorator\ColorDecorator;
-use DiplomaEducation\Foundation\Color\Configurator\RingColorConfigurator;
+use BackTo\DesignSystem\Foundation\Color\Configurator\RingColorConfigurator;
 
 class RingColorDecorator implements StyleDecorator
 {

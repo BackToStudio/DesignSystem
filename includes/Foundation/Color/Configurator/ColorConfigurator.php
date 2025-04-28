@@ -1,6 +1,6 @@
 <?php
 
-namespace DiplomaEducation\Foundation\Color\Configurator;
+namespace BackTo\DesignSystem\Foundation\Color\Configurator;
 
 abstract class ColorConfigurator
 {
