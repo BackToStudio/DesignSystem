@@ -1,6 +1,6 @@
 <?php
 
-namespace BackTo\DesignSystem\BlockEditor\BlockDataMapper;
+namespace BackTo\DesignSystem\BlockEditor;
 
 use BackTo\Framework\Contracts\Hooks;
 use BackTo\DesignSystem\Component\TokenComponent;

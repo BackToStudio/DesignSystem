@@ -7,6 +7,9 @@
         "psr-4": {
             "BackTo\\DesignSystem\\": "includes/"
         }
-    }
+    },
+  "require": {
+    "ext-dom": "*"
+  }
 }
 
