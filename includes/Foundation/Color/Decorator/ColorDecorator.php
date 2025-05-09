@@ -1,8 +1,8 @@
 <?php
 
-namespace BackTo\DesignSystem\Foundation\Decorator;
+namespace BackTo\DesignSystem\Foundation\Color\Decorator;
 
-use BackTo\DesignSystem\Config\TailwindConfig;
+use BackTo\DesignSystem\Foundation\TailwindConfig;
 use BackTo\DesignSystem\Contracts\StyleDecorator;
 
 class ColorDecorator implements StyleDecorator
