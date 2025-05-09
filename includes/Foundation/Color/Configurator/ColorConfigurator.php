@@ -4,26 +4,27 @@ namespace BackTo\DesignSystem\Foundation\Color\Configurator;
 
 abstract class ColorConfigurator
 {
-    private string $colorsFileName;
+    private string $fileName = '';
+    private string $colorsDirectory = '';
 
-    public function __construct(string $colorsFileName)
+    public function __construct(string $colorsDirectory)
     {
-        $this->colorsFileName = $colorsFileName;
+        $this->colorsDirectory = $colorsDirectory;
     }
 
     public function getFileName(): string
     {
-        return $this->colorsFileName;
+        return $this->fileName;
     }
     
     public function getResourceFile(): string
     {
-        return file_get_contents($this->getFileName());
+        return file_get_contents($this->colorsDirectory . DIRECTORY_SEPARATOR . $this->getFileName());
     }
 
     public function hasResourceFile(): bool
     {
-        return file_exists($this->getFileName());
+        return file_exists($this->colorsDirectory . DIRECTORY_SEPARATOR . $this->getFileName());
     }
 
     public function isNotEmptyResourceFile(): bool
