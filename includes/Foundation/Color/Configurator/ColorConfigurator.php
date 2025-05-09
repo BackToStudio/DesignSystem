@@ -4,32 +4,31 @@ namespace BackTo\DesignSystem\Foundation\Color\Configurator;
 
 abstract class ColorConfigurator
 {
-    private string $colorsDirectory;
-    private string $fileName;
+    private string $colorsFileName;
 
-    public function __construct(string $colorsDirectory)
+    public function __construct(string $colorsFileName)
     {
-        $this->colorsDirectory = $colorsDirectory;
+        $this->colorsFileName = $colorsFileName;
     }
 
     public function getFileName(): string
     {
-        return $this->fileName;
+        return $this->colorsFileName;
     }
     
-    public function getResourceFile(string $fileName): string
+    public function getResourceFile(): string
     {
-        return file_get_contents($this->colorsDirectory . DIRECTORY_SEPARATOR . $fileName);
+        return file_get_contents($this->getFileName());
     }
 
     public function hasResourceFile(): bool
     {
-        return file_exists($this->colorsDirectory . DIRECTORY_SEPARATOR . $this->getFileName());
+        return file_exists($this->getFileName());
     }
 
     public function isNotEmptyResourceFile(): bool
     {
-        return !empty(json_decode($this->getResourceFile($this->getFileName()), true));
+        return !empty(json_decode($this->getResourceFile(), true));
     }
 
     public function configure(): array
@@ -37,7 +36,7 @@ abstract class ColorConfigurator
         $colors = [];
         
         if( $this->hasResourceFile() && $this->isNotEmptyResourceFile()){
-            $colors = array_merge($colors, json_decode($this->getResourceFile($this->getFileName()), true));
+            $colors = array_merge($colors, json_decode($this->getResourceFile(), true));
         }
     
         return $colors;
