@@ -4,7 +4,7 @@ namespace BackTo\DesignSystem\Foundation\Color\Configurator;
 
 abstract class ColorConfigurator
 {
-    private string $fileName = '';
+    protected string $fileName = '';
     private string $colorsDirectory = '';
 
     public function __construct(string $colorsDirectory)
