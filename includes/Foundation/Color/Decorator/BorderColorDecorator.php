@@ -1,20 +1,22 @@
 <?php 
 
-namespace BackTo\DesignSystem\Decorator;
+namespace BackTo\DesignSystem\Foundation\Color\Decorator;
 
 use BackTo\DesignSystem\Contracts\StyleDecorator;
-use BackTo\DesignSystem\Foundation\Decorator\ColorDecorator;
+use BackTo\DesignSystem\Foundation\Color\Decorator\ColorDecorator;
+use BackTo\DesignSystem\Foundation\Color\Configurator\BorderColorConfigurator;
 
 class BorderColorDecorator implements StyleDecorator
 {
     private ColorDecorator $colorDecorator;
 
-    public function __construct(array $borderColors)
+    public function __construct(BorderColorConfigurator $configurator)
     {
-        if( empty($borderColors)){
+        $colors = $configurator->configure();
+        if( empty($colors)){
             throw new \Exception('Border colors are not defined.');
         }
-        $this->colorDecorator = new ColorDecorator($borderColors);
+        $this->colorDecorator = new ColorDecorator($colors);
     }
 
     public function setColor(string $color)

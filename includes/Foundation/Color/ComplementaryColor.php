@@ -1,6 +1,6 @@
 <?php
 
-namespace BackTo\DesignSystem\Config;
+namespace BackTo\DesignSystem\Foundation\Color;
 
 class ComplementaryColor
 {
