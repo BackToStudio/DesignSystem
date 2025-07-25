@@ -2,12 +2,12 @@
 
 namespace BackTo\DesignSystem\Component\Heading;
 
-use BackTo\DesignSystem\BlockEditor\BlockDataMapper\BlockDataMapper;
+use BackTo\DesignSystem\BlockEditor\ComponentDataMapper;
 use BackTo\DesignSystem\Component\Heading\HeadingComponent;
 use BackTo\DesignSystem\Component\Heading\HeadingDecorator;
 use WP_Block;
 
-class HeadingBlockDataMapper extends BlockDataMapper
+class HeadingBlockDataMapper extends ComponentDataMapper
 {
     const BLOCK_NAME = 'core/heading';
     private HeadingDecorator $headingDecorator;

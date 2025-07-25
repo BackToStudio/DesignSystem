@@ -2,10 +2,10 @@
 
 namespace BackTo\DesignSystem\Component\Image;
 
-use BackTo\DesignSystem\BlockEditor\BlockDataMapper\BlockDataMapper;
-use WP_Block;
+use BackTo\DesignSystem\BlockEditor\ComponentDataMapper;
+use WP_Block;           
 
-class ImageCompoundBlockDataMapper extends BlockDataMapper
+class ImageCompoundBlockDataMapper extends ComponentDataMapper
 {
     const BLOCK_NAME = 'core/image';
 

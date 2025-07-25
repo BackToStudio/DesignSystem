@@ -6,7 +6,7 @@ use BackTo\Framework\Contracts\Hooks;
 use BackTo\DesignSystem\Component\TokenComponent;
 use WP_Block;
 
-class BlockDataMapper implements Hooks
+class ComponentDataMapper implements Hooks
 {
     const BLOCK_NAME = 'custom-block';
 

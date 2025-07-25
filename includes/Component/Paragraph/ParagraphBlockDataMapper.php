@@ -1,13 +1,14 @@
 <?php
 
-namespace BackTo\DesignSystem\BlockEditor\BlockDataMapper;
+namespace BackTo\DesignSystem\Component\Paragraph;
 
+use BackTo\DesignSystem\BlockEditor\ComponentDataMapper;
 use BackTo\DesignSystem\Component\Paragraph\ParagraphComponent;
 use BackTo\DesignSystem\Component\Paragraph\ParagraphDecorator;
 use BackTo\DesignSystem\Component\TokenComponent;
 use WP_Block;
 
-class ParagraphBlockDataMapper extends BlockDataMapper
+class ParagraphBlockDataMapper extends ComponentDataMapper
 {
     const BLOCK_NAME = 'core/paragraph';
     private ParagraphDecorator $paragraphDecorator;

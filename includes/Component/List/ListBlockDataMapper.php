@@ -1,13 +1,14 @@
 <?php
 
-namespace BackTo\DesignSystem\BlockEditor\BlockDataMapper;
+namespace BackTo\DesignSystem\Component\List;
 
+use BackTo\DesignSystem\BlockEditor\ComponentDataMapper;
 use BackTo\DesignSystem\Component\List\ListComponent;
 use BackTo\DesignSystem\Component\List\ListDecorator;
 use BackTo\DesignSystem\Component\TokenComponent;
 use WP_Block;
 
-class ListBlockDataMapper extends BlockDataMapper
+class ListBlockDataMapper extends ComponentDataMapper
 {
     const BLOCK_NAME = 'core/list';
     private ListDecorator $listDecorator;
