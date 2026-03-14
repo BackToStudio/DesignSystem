@@ -1,11 +1,14 @@
 <?php
 
-namespace BackTo\DesignSystem\Component;
+namespace BackTo\DesignSystem\Component\Fake;
 
-use BackTo\DesignSystem\Component\Fake\FakeButtonDecorator;
+use BackTo\DesignSystem\BlockEditor\ComponentDataMapper;
+use BackTo\DesignSystem\Component\TokenComponent;
+use WP_Block;
 
-class FakeButtonBlockDataMapper extends TokenComponent
+class FakeButtonBlockDataMapper extends ComponentDataMapper
 {
+    const BLOCK_NAME = 'core/button';
     private FakeButtonDecorator $fakeButtonDecorator;
 
     public function __construct(FakeButtonDecorator $fakeButtonDecorator)
@@ -13,13 +16,20 @@ class FakeButtonBlockDataMapper extends TokenComponent
         $this->fakeButtonDecorator = $fakeButtonDecorator;
     }
 
-    public function render(){
-        $component = new FakeButtonComponent();
-        /* IF : Que si le style est a définir : */
-        $this->fakeButtonDecorator->setColor('red');
-        $component->addDecorator($this->fakeButtonDecorator);
-        /* ENDIF : Que si le style est a définir : */
+    public function getComponent(array $block): TokenComponent
+    {
+        return new FakeButtonComponent();
+    }
 
-        return $component->getMarkup();
+    public function applyData($component, string $blockContent, array $block, WP_Block $instance): void
+    {
+    }
+
+    public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void
+    {
+        /** @var FakeButtonComponent $component */
+        $color = $block['attrs']['color'] ?? 'red';
+        $this->fakeButtonDecorator->setColor($color);
+        $component->addDecorator($this->fakeButtonDecorator);
     }
 }

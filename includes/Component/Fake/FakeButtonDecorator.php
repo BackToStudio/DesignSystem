@@ -2,11 +2,12 @@
 
 namespace BackTo\DesignSystem\Component\Fake;
 
-use BackTo\DesignSystem\Config\ComplementaryColor;
+use BackTo\DesignSystem\Foundation\Color\ComplementaryColor;
 use BackTo\DesignSystem\Contracts\CompoundDecorator;
-use BackTo\DesignSystem\Decorator\BackgroundColorDecorator;
-use BackTo\DesignSystem\Decorator\RingColorDecorator;
-use BackTo\DesignSystem\Decorator\TextColorDecorator;
+use BackTo\DesignSystem\Foundation\Color\Decorator\BackgroundColorDecorator;
+use BackTo\DesignSystem\Foundation\Color\Decorator\BorderColorDecorator;
+use BackTo\DesignSystem\Foundation\Color\Decorator\RingColorDecorator;
+use BackTo\DesignSystem\Foundation\Color\Decorator\TextColorDecorator;
 
 class FakeButtonDecorator implements CompoundDecorator
 {
@@ -22,8 +23,8 @@ class FakeButtonDecorator implements CompoundDecorator
         RingColorDecorator $ringColorDecorator,
         BorderColorDecorator $borderColorDecorator,
         TextColorDecorator $textColorDecorator,
-        ComplementaryColor $complementaryColor)
-    {
+        ComplementaryColor $complementaryColor
+    ) {
         $this->backgroundDecorator = $backgroundDecorator;
         $this->ringColorDecorator = $ringColorDecorator;
         $this->borderColorDecorator = $borderColorDecorator;
@@ -49,31 +50,31 @@ class FakeButtonDecorator implements CompoundDecorator
 
     public function getRingColor(): string
     {
-        return $this->ringConfig->getValue($this->getColor());
+        $this->ringColorDecorator->setColor($this->getColor());
+        return $this->ringColorDecorator->getClassName();
     }
 
     public function getBorderColor(): string
     {
-        return $this->borderConfig->getValue($this->getColor());
+        $this->borderColorDecorator->setColor($this->getColor());
+        return $this->borderColorDecorator->getClassName();
     }
 
     public function getTextColor(): string
     {
         $complementColor = $this->complementaryColor->getColorName($this->getColor());
-        return $this->textColorConfig->getValue($complementColor);
+        $this->textColorDecorator->setColor($complementColor);
+        return $this->textColorDecorator->getClassName();
     }
 
     public function getClassName(): string
     {
         $classNames = [];
+        $classNames[] = $this->getBackgroundColor();
         $classNames[] = $this->getRingColor();
         $classNames[] = $this->getBorderColor();
-
-        $this->backgroundDecorator->setColor($this->getColor());
-        $className[] = $this->backgroundDecorator->getClassName();
-
         $classNames[] = $this->getTextColor();
-        
+
         return join(' ', $classNames);
     }
 }
