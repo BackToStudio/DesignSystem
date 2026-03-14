@@ -13,11 +13,11 @@ class SliderControls extends TokenComponent
 
 	public function __construct()
 	{
-		$this->addClass('wp-block-slider__controls');
+		$this->addClass('ds-slider__controls');
 
 		$this->sliderPrev = new ButtonComponent();
 		$this->sliderPrev->addClass('is-style-link is-style-icon');
-		$this->sliderPrev->addClass('wp-block-slider__prev');
+		$this->sliderPrev->addClass('ds-slider__prev');
 		// $this->sliderPrev->addClass('!static');
 		$svgFactory = new SvgFactory();
 		$arrowLeftComponent = $svgFactory->getComponent('arrow_left');
@@ -26,7 +26,7 @@ class SliderControls extends TokenComponent
 
 		$this->sliderNext = new ButtonComponent();
 		$this->sliderNext->addClass('is-style-link is-style-icon');
-		$this->sliderNext->addClass('wp-block-slider__next');
+		$this->sliderNext->addClass('ds-slider__next');
 		// $this->sliderNext->addClass('!static');
 		$arrowRightComponent = $svgFactory->getComponent('arrow_right');
 		$this->sliderNext->addChild($arrowRightComponent->getMarkup());

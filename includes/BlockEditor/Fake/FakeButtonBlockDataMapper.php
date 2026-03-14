@@ -1,8 +1,10 @@
 <?php
 
-namespace BackTo\DesignSystem\Component\Fake;
+namespace BackTo\DesignSystem\BlockEditor\Fake;
 
 use BackTo\DesignSystem\BlockEditor\ComponentDataMapper;
+use BackTo\DesignSystem\Component\Fake\FakeButtonComponent;
+use BackTo\DesignSystem\Component\Fake\FakeButtonDecorator;
 use BackTo\DesignSystem\Component\TokenComponent;
 use WP_Block;
 

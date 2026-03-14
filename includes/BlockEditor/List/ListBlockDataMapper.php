@@ -1,42 +1,34 @@
 <?php
 
-namespace BackTo\DesignSystem\Component\List;
+namespace BackTo\DesignSystem\BlockEditor\ListBlock;
 
 use BackTo\DesignSystem\BlockEditor\ComponentDataMapper;
-use BackTo\DesignSystem\Component\List\ListComponent;
-use BackTo\DesignSystem\Component\List\ListDecorator;
 use BackTo\DesignSystem\Component\TokenComponent;
 use WP_Block;
 
 class ListBlockDataMapper extends ComponentDataMapper
 {
     const BLOCK_NAME = 'core/list';
-    private ListDecorator $listDecorator;
 
-    public function __construct(
-        ListDecorator $listDecorator
-    ){
+    /** @var \BackTo\DesignSystem\Component\List\ListDecorator */
+    private $listDecorator;
+
+    public function __construct($listDecorator)
+    {
         $this->listDecorator = $listDecorator;
     }
 
     public function getComponent(array $block): TokenComponent
     {
-        return new ListComponent();
+        return new \BackTo\DesignSystem\Component\List\ListComponent();
     }
 
-    public function applyData($component, string $blockContent, array $block, WP_Block $instance): void {
-        /** @var ListComponent $component */
-
-        // TODO : add content
-
+    public function applyData($component, string $blockContent, array $block, WP_Block $instance): void
+    {
         if (isset($block['attrs']['ordered'])) {
             $component->ordered($block['attrs']['ordered']);
         }
 
-        // if (isset($block['attrs']['type'])) {
-        //     $component->setType($block['attrs']['type']);
-        // }
-    
         if (isset($block['attrs']['start'])) {
             $component->setStart($block['attrs']['start']);
         }
@@ -45,18 +37,15 @@ class ListBlockDataMapper extends ComponentDataMapper
         $component->addChild('Fake content');
     }
 
-    public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void {
-        /** @var ListComponent $component */
+    public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void
+    {
         $component->addDecorator($this->listDecorator);
 
         // TODO : add has_parent_layout and parent_layout_constrained
         // TODO : add condition to add align decorator
-        // $align = $block['attrs']['align'] ?? 'default';
 
         if (isset($block['attrs']['className'])) {
             $component->addClass($block['attrs']['className']);
         }
     }
-    
-
 }

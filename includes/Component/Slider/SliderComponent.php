@@ -16,22 +16,22 @@ class SliderComponent extends TokenComponent
 
 	public function __construct()
 	{
-		$uniqueId = wp_generate_uuid4();
+		$uniqueId = bin2hex(random_bytes(16));
 		$this->setId('slider-' . $uniqueId);
 		$this->addAttribute('id', $this->getId());
-		$this->addClass('wp-block-slider');
+		$this->addClass('ds-slider');
 
 		$this->mobile = new SliderSettings();
 		$this->desktop = new SliderSettings();
 
 		$this->slideContainer = new SliderContainer();
-		$this->slideContainer->addClass('wp-block-slider__slides');
+		$this->slideContainer->addClass('ds-slider__slides');
 
 		$this->sliderControls = new SliderControls();
-		$this->sliderControls->addClass('wp-block-slider__controls');
+		$this->sliderControls->addClass('ds-slider__controls');
 
 		$this->sliderPagination = new TokenComponent();
-		$this->sliderPagination->addClass('wp-block-slider__pagination');
+		$this->sliderPagination->addClass('ds-slider__pagination');
 	}
 
 	public function setId(string $id): static
