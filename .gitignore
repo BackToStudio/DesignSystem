@@ -1,2 +1,5 @@
 /vendor/
 /.phpunit.cache/
+/docs/screenshots/node_modules/
+/docs/screenshots/html/
+/docs/screenshots/package-lock.json
