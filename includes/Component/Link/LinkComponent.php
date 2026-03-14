@@ -46,9 +46,11 @@ class LinkComponent extends TokenComponent
 
     public function getMarkup(): string
     {
-        if (!empty($this->getHref())) {
-            $this->addAttribute('href', $this->getHref());
+        if (empty($this->getHref())) {
+            throw new \InvalidArgumentException('The href attribute is required on LinkComponent.');
         }
+
+        $this->addAttribute('href', $this->getHref());
 
         if (!empty($this->getTarget())) {
             $this->addAttribute('target', $this->getTarget());

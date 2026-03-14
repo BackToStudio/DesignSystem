@@ -27,8 +27,9 @@ class ButtonComponent extends TokenComponent
 
 	public function getMarkup(): string
 	{
-        if( $this->disabled ){
+        if ($this->disabled) {
             $this->addAttribute('disabled', 'disabled');
+            $this->addAttribute('aria-disabled', 'true');
         }
 
         $this->addAttribute('type', $this->type);
