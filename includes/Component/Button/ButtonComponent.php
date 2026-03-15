@@ -9,20 +9,23 @@ class ButtonComponent extends TokenComponent
     private string $type = 'button';
     private bool $disabled = false;
 
-	public function setType(string $type): void
+	public function setType(string $type): static
 	{
 		$this->type = $type;
-    }
+		return $this;
+	}
 
-    public function disable(): void
-    {
-        $this->disabled = true;
-    }
+	public function disable(): static
+	{
+		$this->disabled = true;
+		return $this;
+	}
 
-    public function enable(): void
-    {
-        $this->disabled = false;
-    }   
+	public function enable(): static
+	{
+		$this->disabled = false;
+		return $this;
+	}
     
 
 	public function getMarkup(): string

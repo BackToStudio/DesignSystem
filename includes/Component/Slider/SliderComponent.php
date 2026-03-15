@@ -93,10 +93,10 @@ class SliderComponent extends TokenComponent
 		$this->addChild($this->getSlidesContainer()->getMarkup());
 
 		$hasMobileControls =
-			$this->getMobileSettings()->enable() &&
+			$this->getMobileSettings()->isEnable() &&
 			$this->getMobileSettings()->hasControls();
 		$hasDesktopControls =
-			$this->getDesktopSettings()->enable() &&
+			$this->getDesktopSettings()->isEnable() &&
 			$this->getDesktopSettings()->hasControls();
 
 		if (($hasMobileControls || $hasDesktopControls) && $hasSlides) {
@@ -104,10 +104,10 @@ class SliderComponent extends TokenComponent
 		}
 
 		$hasMobilePagination =
-			$this->getMobileSettings()->enable() &&
+			$this->getMobileSettings()->isEnable() &&
 			$this->getMobileSettings()->hasPagination();
 		$hasDesktopPagination =
-			$this->getDesktopSettings()->enable() &&
+			$this->getDesktopSettings()->isEnable() &&
 			$this->getDesktopSettings()->hasPagination();
 
 		if (($hasMobilePagination || $hasDesktopPagination) && $hasSlides) {

@@ -63,15 +63,20 @@ jobs:
       - name: Install PHP dependencies
         run: composer install --prefer-dist --no-progress
 
-      - name: Install Chromium
-        run: npx puppeteer browsers install chrome@stable
+      - name: Install puppeteer-core
+        working-directory: docs/screenshots
+        run: npm install --no-audit --no-fund
 
-      - name: Generate screenshots
+      - name: Install Chromium and generate screenshots
+        working-directory: docs/screenshots
         run: |
-          php docs/screenshots/render-components.php
-          cd docs/screenshots
-          npm install --prefer-offline --no-audit --no-fund
-          CHROME_PATH=$(find $HOME/.cache -name "chrome" -type f | head -1) node capture.mjs
+          npx @puppeteer/browsers install chrome@stable --path $HOME/.chrome
+          export CHROME_PATH=$(find $HOME/.chrome -name "chrome" -type f -executable | head -1)
+          echo "Using Chrome at: $CHROME_PATH"
+          php ../../docs/screenshots/render-components.php
+          node capture.mjs
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
 
       - name: Commit updated screenshots
         run: |

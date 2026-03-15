@@ -10,9 +10,10 @@ class ListComponent extends TokenComponent
 	private int $start = 1;
 	protected string $tagName = 'ul';
 
-	public function ordered(bool $ordered = true): void
+	public function ordered(bool $ordered = true): static
 	{
 		$this->ordered = $ordered;
+		return $this;
 	}
 
 	public function isOrdered(): bool
@@ -20,9 +21,10 @@ class ListComponent extends TokenComponent
 		return $this->ordered;
 	}
 
-	public function setStart(int $start): void
+	public function setStart(int $start): static
 	{
 		$this->start = $start;
+		return $this;
 	}
 
 	public function getStart(): int

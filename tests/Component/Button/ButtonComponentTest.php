@@ -63,4 +63,15 @@ class ButtonComponentTest extends TestCase
         $markup = $button->getMarkup();
         $this->assertStringContainsString('Click me', $markup);
     }
+
+    public function testFluentInterface(): void
+    {
+        $button = new ButtonComponent();
+        $result = $button->setType('submit')->disable()->addClass('primary');
+        $this->assertSame($button, $result);
+        $markup = $button->getMarkup();
+        $this->assertStringContainsString('type="submit"', $markup);
+        $this->assertStringContainsString('disabled="disabled"', $markup);
+        $this->assertStringContainsString('primary', $markup);
+    }
 }
