@@ -6,5 +6,5 @@ use BackTo\DesignSystem\Component\TokenComponent;
 
 class FigureComponent extends TokenComponent
 {
-    private string $tagName = 'figure';
+    protected string $tagName = 'figure';
 }

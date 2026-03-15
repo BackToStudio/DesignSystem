@@ -6,24 +6,12 @@ use BackTo\DesignSystem\Component\TokenComponent;
 
 class FigCaptionComponent extends TokenComponent
 {
-    private string $tagName = 'figcaption';
-    private string $children = '';
+    protected string $tagName = 'figcaption';
 
-    public function setChildren(string $children): self
+    public function setCaption(string $caption): self
     {
-        $this->children = $children;
+        $this->clearChildren();
+        $this->addChild($caption);
         return $this;
-    }
-
-    public function getChildren(): string
-    {
-        return $this->children;
-    }
-
-    public function getMarkup(): string
-    {
-        $this->addChild($this->getChildren());
-
-        return parent::getMarkup();
     }
 }

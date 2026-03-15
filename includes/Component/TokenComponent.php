@@ -8,6 +8,7 @@ use BackTo\DesignSystem\Contracts\StyleDecorator;
 class TokenComponent implements Component
 {
     protected string $tagName = 'div';
+    protected bool $selfClosing = false;
     private array $attributes = [];
     private array $children = [];
     private array $classes = [];
@@ -149,8 +150,12 @@ class TokenComponent implements Component
         $attributes = $this->prepareAttributes();
         $tagName = $this->getTagName();
 
+        if ($this->selfClosing) {
+            return '<' . $tagName . ' ' . trim($attributes) . ' />';
+        }
+
         $markup = '<' . $tagName . ' ' . $attributes . '>';
-        $markup .= join(' ', $this->getChildren());
+        $markup .= join('', $this->getChildren());
         $markup .= '</' . $tagName . '>';
 
         return $markup;

@@ -8,8 +8,15 @@
             "BackTo\\DesignSystem\\": "includes/"
         }
     },
-  "require": {
-    "ext-dom": "*"
-  }
+    "autoload-dev": {
+        "psr-4": {
+            "BackTo\\DesignSystem\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "ext-dom": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    }
 }
-

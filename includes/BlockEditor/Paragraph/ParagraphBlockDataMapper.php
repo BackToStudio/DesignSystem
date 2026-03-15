@@ -1,6 +1,6 @@
 <?php
 
-namespace BackTo\DesignSystem\Component\Paragraph;
+namespace BackTo\DesignSystem\BlockEditor\Paragraph;
 
 use BackTo\DesignSystem\BlockEditor\ComponentDataMapper;
 use BackTo\DesignSystem\Component\Paragraph\ParagraphComponent;
@@ -15,7 +15,7 @@ class ParagraphBlockDataMapper extends ComponentDataMapper
 
     public function __construct(
         ParagraphDecorator $paragraphDecorator
-    ){
+    ) {
         $this->paragraphDecorator = $paragraphDecorator;
     }
 
@@ -24,15 +24,16 @@ class ParagraphBlockDataMapper extends ComponentDataMapper
         return new ParagraphComponent();
     }
 
-    public function applyData($component, string $blockContent, array $block, WP_Block $instance): void {
+    public function applyData($component, string $blockContent, array $block, WP_Block $instance): void
+    {
         /** @var ParagraphComponent $component */
         // TODO : add content
         $component->addChild('Fake content');
     }
 
-    public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void {
+    public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void
+    {
         /** @var ParagraphComponent $component */
         $component->addDecorator($this->paragraphDecorator);
     }
-    
 }

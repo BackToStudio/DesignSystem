@@ -3,10 +3,10 @@
 namespace BackTo\DesignSystem\Component\Heading;
 
 use BackTo\DesignSystem\Contracts\StyleDecorator;
-use BackTo\DesignSystem\Foundation\Decorator\FontFamilyDecorator;
-use BackTo\DesignSystem\Foundation\Decorator\FontSizeDecorator;
-use BackTo\DesignSystem\Foundation\Decorator\LineHeightDecorator;
-use BackTo\DesignSystem\Foundation\Decorator\LetterSpacingDecorator;
+use BackTo\DesignSystem\Foundation\Typography\Decorator\FontFamilyDecorator;
+use BackTo\DesignSystem\Foundation\Typography\Decorator\FontSizeDecorator;
+use BackTo\DesignSystem\Foundation\Typography\Decorator\LineHeightDecorator;
+use BackTo\DesignSystem\Foundation\Typography\Decorator\LetterSpacingDecorator;
 
 class HeadingDecorator implements StyleDecorator
 {

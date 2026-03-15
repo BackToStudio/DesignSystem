@@ -1,6 +1,6 @@
 <?php
 
-namespace BackTo\DesignSystem\Component\Heading;
+namespace BackTo\DesignSystem\BlockEditor\Heading;
 
 use BackTo\DesignSystem\BlockEditor\ComponentDataMapper;
 use BackTo\DesignSystem\Component\Heading\HeadingComponent;
@@ -14,7 +14,7 @@ class HeadingBlockDataMapper extends ComponentDataMapper
 
     public function __construct(
         HeadingDecorator $headingDecorator
-    ){
+    ) {
         $this->headingDecorator = $headingDecorator;
     }
 
@@ -23,9 +23,10 @@ class HeadingBlockDataMapper extends ComponentDataMapper
         return new HeadingComponent();
     }
 
-    public function applyData($component, string $blockContent, array $block, WP_Block $instance): void {
+    public function applyData($component, string $blockContent, array $block, WP_Block $instance): void
+    {
         /** @var HeadingComponent $component */
-        if( isset($block['attrs']['level']) ){
+        if (isset($block['attrs']['level'])) {
             $component->setLevel($block['attrs']['level']);
         }
 
@@ -33,9 +34,9 @@ class HeadingBlockDataMapper extends ComponentDataMapper
         $component->addChild('Fake content');
     }
 
-    public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void {
+    public function applyStyles($component, string $blockContent, array $block, WP_Block $instance): void
+    {
         /** @var HeadingComponent $component */
         $component->addDecorator($this->headingDecorator);
     }
-    
 }

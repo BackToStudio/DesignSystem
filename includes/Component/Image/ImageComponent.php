@@ -7,9 +7,11 @@ use BackTo\DesignSystem\Component\TokenComponent;
 class ImageComponent extends TokenComponent
 {
     protected string $tagName = 'img';
+    protected bool $selfClosing = true;
     protected string $title = '';
     protected string $alt = '';
     protected string $src = '';
+    private bool $altWasSet = false;
 
     public function getTitle(): string
     {
@@ -30,6 +32,7 @@ class ImageComponent extends TokenComponent
     public function setAlt(string $alt): self
     {
         $this->alt = $alt;
+        $this->altWasSet = true;
         return $this;
     }
 
@@ -46,20 +49,20 @@ class ImageComponent extends TokenComponent
 
     public function getMarkup(): string
     {
+        if (!$this->altWasSet) {
+            throw new \InvalidArgumentException('The alt attribute must be set on ImageComponent. Use setAlt("") for decorative images.');
+        }
+
         if (!empty($this->getSrc())) {
             $this->addAttribute('src', $this->getSrc());
         }
 
-        if (!empty($this->getAlt())) {
-            $this->addAttribute('alt', $this->getAlt());
-        }
-
+        $this->addAttribute('alt', $this->getAlt());
 
         if (!empty($this->getTitle())) {
             $this->addAttribute('title', $this->getTitle());
         }
 
-        $attributes = $this->prepareAttributes();
-        return '<'.$this->getTagName() .' ' . $attributes . '>';
+        return parent::getMarkup();
     }
 }

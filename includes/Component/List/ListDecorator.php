@@ -3,7 +3,7 @@
 namespace BackTo\DesignSystem\Component\List;
 
 use BackTo\DesignSystem\Contracts\StyleDecorator;
-use BackTo\DesignSystem\Foundation\Decorator\AlignDecorator;
+use BackTo\DesignSystem\Foundation\Grid\Decorator\AlignDecorator;
 
 class ListDecorator implements StyleDecorator
 {
